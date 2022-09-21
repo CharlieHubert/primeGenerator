@@ -9,7 +9,7 @@ public class PrimePrinter {
     final int ORDMAX = 30;
     int P[] = new int[M+1];
     int PAGENUMBER;
-    int PAGEOFFSET;
+    int pageOFFSET;
     int ROWOFFSET;
     int C;
     int J;
@@ -48,14 +48,14 @@ public class PrimePrinter {
       P[K]=J;
     }
     PAGENUMBER = 1;
-    PAGEOFFSET = 1;
-    while (PAGEOFFSET <= M) {
+    pageOFFSET = 1;
+    while (pageOFFSET <= M) {
       System.out.print("The First ");
       System.out.print(Integer.toString(M));
       System.out.print(" Prime Numbers --- Page ");
       System.out.print(Integer.toString(PAGENUMBER));
       System.out.println("\n");
-      for (ROWOFFSET=PAGEOFFSET; ROWOFFSET <= PAGEOFFSET+RR-1; ROWOFFSET++) {
+      for (ROWOFFSET=pageOFFSET; ROWOFFSET <= pageOFFSET+RR-1; ROWOFFSET++) {
         for (C=0; C <= CC-1; C++)
           if (ROWOFFSET+C*RR <= M)
             System.out.printf("%10d", P[ROWOFFSET+C*RR]);
@@ -63,7 +63,7 @@ public class PrimePrinter {
       }
       System.out.println("\f");
       PAGENUMBER++;
-      PAGEOFFSET += RR*CC;
+      pageOFFSET += RR*CC;
     }
   }
 }

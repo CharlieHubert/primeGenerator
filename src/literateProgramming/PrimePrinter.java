@@ -5,7 +5,7 @@ public class PrimePrinter {
         final int numPrimes = 1000;
         PrimeGenerator primeGenerator = new PrimeGenerator(numPrimes);
         NumberPrinter numberPrinter = new NumberPrinter(50, 4);
-        numberPrinter.print(numPrimes, primeGenerator.generate());
+        numberPrinter.print(primeGenerator.generate());
     }
 
 }
